@@ -84,10 +84,10 @@
       border: none;
       color: #ffffff;
     }
-    .card.dark h2{ color:#ffffff; border-color: rgba(255,255,255,.25);}
-    .card.dark .muted{ color: rgba(255,255,255,.82);}
-    .card.dark li b{ color:#ffffff;}
-    .card.dark a{ color:#ffb3c6;}
+    .card.dark h2{ color:#ffffff; border-color: rgba(255,255,255,.25); }
+    .card.dark .muted{ color: rgba(255,255,255,.82); }
+    .card.dark li b{ color:#ffffff; }
+    .card.dark a{ color:#ffb3c6; }
 
     h2{
       margin:0 0 12px;
@@ -97,7 +97,7 @@
       padding-bottom: 8px;
     }
     ul{margin:10px 0 0 18px; padding:0}
-    li{ margin-bottom: 6px;}
+    li{ margin-bottom: 6px; }
     .pill{
       display:inline-block; padding:3px 11px; border-radius:999px;
       background: rgba(255,255,255,.20);
@@ -118,6 +118,24 @@
     }
     .kpi b{display:block; font-size:13px; color: var(--accent); margin-bottom:2px;}
     .kpi span{font-size:12px; color:var(--muted)}
+
+    /* ── SPEAKERS GRID ── */
+    .speaker-grid{
+      display:grid;
+      gap:12px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 10px;
+    }
+    @media (max-width: 650px){ .speaker-grid{grid-template-columns:1fr} }
+    .speaker{
+      background:#ffffff;
+      border:1px solid rgba(109,0,32,.15);
+      border-radius:12px;
+      padding:14px;
+    }
+    .speaker b{display:block; color: var(--accent); margin-bottom:4px;}
+    .speaker .role{font-size: 13px; color: var(--muted);}
+    .speaker .meta{margin-top:8px; font-size: 13px; color: var(--muted);}
 
     /* ── FOOTER ── */
     footer{
@@ -147,6 +165,7 @@
         <a href="#dates">Important Dates</a>
         <a href="#submission">Submission</a>
         <a href="#schedule">Schedule</a>
+        <a href="#speakers">Speakers</a>
         <a href="#organizers">Organizers</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -215,6 +234,40 @@
           Tentative structure: 2 keynotes • spotlight talks • posters • panel • demos (videos welcome).
           <br/><br/>Full schedule: <b>TBA</b>
         </p>
+      </section>
+
+      <section id="speakers" class="card">
+        <h2>Speakers</h2>
+        <p class="muted">
+          Invited speakers and panelists will be announced soon.
+        </p>
+
+        <!-- Replace the placeholder entries below as speakers confirm -->
+        <div class="speaker-grid">
+          <div class="speaker">
+            <b>TBA — Invited Speaker</b>
+            <div class="role">Affiliation: <span class="muted">TBA</span></div>
+            <div class="meta">Topic: <span class="muted">TBA</span></div>
+          </div>
+
+          <div class="speaker">
+            <b>TBA — Invited Speaker</b>
+            <div class="role">Affiliation: <span class="muted">TBA</span></div>
+            <div class="meta">Topic: <span class="muted">TBA</span></div>
+          </div>
+
+          <div class="speaker">
+            <b>TBA — Panelist / Speaker</b>
+            <div class="role">Affiliation: <span class="muted">TBA</span></div>
+            <div class="meta">Topic: <span class="muted">TBA</span></div>
+          </div>
+
+          <div class="speaker">
+            <b>TBA — Panelist / Speaker</b>
+            <div class="role">Affiliation: <span class="muted">TBA</span></div>
+            <div class="meta">Topic: <span class="muted">TBA</span></div>
+          </div>
+        </div>
       </section>
 
       <section id="organizers" class="card">
