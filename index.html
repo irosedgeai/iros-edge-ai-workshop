@@ -137,6 +137,58 @@
     .speaker .role{font-size: 13px; color: var(--muted);}
     .speaker .meta{margin-top:8px; font-size: 13px; color: var(--muted);}
 
+    /* ── ORGANIZING COMMITTEE GRID ── */
+    .org-grid{
+      display:grid;
+      gap:12px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 10px;
+    }
+    @media (max-width: 650px){ .org-grid{grid-template-columns:1fr} }
+
+    .org-card{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      background:#ffffff;
+      border:1px solid rgba(109,0,32,.15);
+      border-radius:12px;
+      padding:14px;
+    }
+
+    /* Photo placeholder block for each organizer (replace with <img> later) */
+    .org-photo{
+      width:72px;
+      height:72px;
+      flex: 0 0 72px;
+      border-radius:12px;
+      border:1px dashed rgba(109,0,32,.30);
+      background: rgba(109,0,32,.06);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:12px;
+      color: var(--muted);
+      text-align:center;
+      padding:8px;
+    }
+
+    .org-info b{
+      display:block;
+      color: var(--accent);
+      margin-bottom:4px;
+      font-size: 14px;
+    }
+    .org-info .affil{
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .org-info .role{
+      margin-top:6px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
     /* ── FOOTER ── */
     footer{
       padding: 20px 18px;
@@ -271,18 +323,85 @@
       </section>
 
       <section id="organizers" class="card">
-        <h2>Organizers</h2>
-        <ul class="muted">
-          <li><b>Your Name</b>, Affiliation</li>
-          <li><b>Co-organizer</b>, Affiliation</li>
-          <li><b>Co-organizer</b>, Affiliation</li>
-        </ul>
+        <h2>Organizing Committee</h2>
+
+        <!--
+          Photo notes:
+          - Each member has a dedicated photo block (.org-photo).
+          - Later you can replace the <div class="org-photo"> with an <img> tag, e.g.:
+            <img class="org-photo-img" src="images/xiaomin-lin.jpg" alt="Xiaomin Lin" />
+        -->
+
+        <div class="org-grid">
+          <div class="org-card">
+            <div class="org-photo">Photo<br/>TBA</div>
+            <div class="org-info">
+              <b>Xiaomin Lin</b>
+              <div class="affil">University of South Florida</div>
+              <div class="role">Assistant Professor</div>
+            </div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-photo">Photo<br/>TBA</div>
+            <div class="org-info">
+              <b>Tinoosh Mohsenin</b>
+              <div class="affil">Johns Hopkins University</div>
+              <div class="role">Associate Professor</div>
+            </div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-photo">Photo<br/>TBA</div>
+            <div class="org-info">
+              <b>Chuchu Chen</b>
+              <div class="affil">George Washington University</div>
+              <div class="role">Assistant Professor</div>
+            </div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-photo">Photo<br/>TBA</div>
+            <div class="org-info">
+              <b>Hasib Al Rashid</b>
+              <div class="affil">UMBC, Amazon</div>
+              <div class="role">&nbsp;</div>
+            </div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-photo">Photo<br/>TBA</div>
+            <div class="org-info">
+              <b>Pete Bernard</b>
+              <div class="affil">Edge AI Foundation</div>
+              <div class="role">&nbsp;</div>
+            </div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-photo">Photo<br/>TBA</div>
+            <div class="org-info">
+              <b>Evgeni Gousev</b>
+              <div class="affil">Qualcomm</div>
+              <div class="role">Vice President</div>
+            </div>
+          </div>
+
+          <div class="org-card">
+            <div class="org-photo">Photo<br/>TBA</div>
+            <div class="org-info">
+              <b>Naitri Rajyaguru</b>
+              <div class="affil">University of Maryland</div>
+              <div class="role">PhD student</div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section id="contact" class="card dark">
         <h2>Contact</h2>
         <p class="muted">
-          Email: <a href="irosedgeai@gmail.com">irosedgeai@gmail.com</a><br/><br/>
+          Email: <a href="mailto:irosedgeai@gmail.com">irosedgeai@gmail.com</a><br/><br/>
         </p>
       </section>
 
