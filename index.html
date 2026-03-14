@@ -131,11 +131,12 @@
     /* ── SPEAKERS GRID ── */
     .speaker-grid{
       display:grid;
-      gap:14px;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      margin-top: 12px;
+      gap:16px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 14px;
     }
-    @media (max-width: 650px){ .speaker-grid{grid-template-columns:1fr} }
+    @media (max-width: 900px){ .speaker-grid{grid-template-columns: repeat(3, 1fr)} }
+    @media (max-width: 600px){ .speaker-grid{grid-template-columns: repeat(2, 1fr)} }
     .speaker{
       background:#ffffff;
       border:1px solid rgba(109,0,32,.15);
@@ -174,8 +175,8 @@
 
     /* Headshot image */
     .org-photo{
-      width: 160px;
-      height: 160px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid rgba(109,0,32,.18);
@@ -186,8 +187,8 @@
 
     /* Placeholder div when no photo yet */
     .org-photo-placeholder{
-      width: 160px;
-      height: 160px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       border: 2px dashed rgba(109,0,32,.30);
       background: rgba(109,0,32,.05);
@@ -328,30 +329,69 @@
         </p>
       </section>
 
-      <section id="speakers" class="card">
-        <h2>Speakers</h2>
-        <p class="muted">Invited speakers and panelists will be announced soon.</p>
+      <section id="speakers" class="card full">
+        <h2>Invited Speakers</h2>
         <div class="speaker-grid">
-          <div class="speaker">
-            <b>TBA — Invited Speaker</b>
-            <div class="role">Affiliation: <span class="muted">TBA</span></div>
-            <div class="meta">Topic: <span class="muted">TBA</span></div>
+
+          <div class="org-card">
+            <img class="org-photo" src="Deva.jpg" alt="Deva Kannan Ramanan"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
+            <div class="org-info">
+              <b>Deva Kannan Ramanan</b>
+              <div class="affil">Carnegie Mellon University</div>
+            </div>
           </div>
-          <div class="speaker">
-            <b>TBA — Invited Speaker</b>
-            <div class="role">Affiliation: <span class="muted">TBA</span></div>
-            <div class="meta">Topic: <span class="muted">TBA</span></div>
+
+          <div class="org-card">
+            <img class="org-photo" src="yannis.jpg" alt="Yiannis Aloimonos"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
+            <div class="org-info">
+              <b>Yiannis Aloimonos</b>
+              <div class="affil">University of Maryland</div>
+            </div>
           </div>
-          <div class="speaker">
-            <b>TBA — Panelist / Speaker</b>
-            <div class="role">Affiliation: <span class="muted">TBA</span></div>
-            <div class="meta">Topic: <span class="muted">TBA</span></div>
+
+          <div class="org-card">
+            <img class="org-photo" src="he.jpg" alt="Honglu He"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
+            <div class="org-info">
+              <b>Honglu He</b>
+              <div class="affil">Analog Devices</div>
+            </div>
           </div>
-          <div class="speaker">
-            <b>TBA — Panelist / Speaker</b>
-            <div class="role">Affiliation: <span class="muted">TBA</span></div>
-            <div class="meta">Topic: <span class="muted">TBA</span></div>
+
+          <div class="org-card">
+            <img class="org-photo" src="ken.jpg" alt="Ken Macken"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
+            <div class="org-info">
+              <b>Ken Macken</b>
+              <div class="affil">Workr Labs</div>
+              <div class="role-tag">CEO</div>
+            </div>
           </div>
+
+          <div class="org-card">
+            <div class="org-photo-placeholder">Photo<br/>TBA</div>
+            <div class="org-info">
+              <b>Peng Wang</b>
+              <div class="affil">ARL</div>
+            </div>
+          </div>
+
+          <div class="org-card">
+            <img class="org-photo" src="andreas.jpg" alt="Andreas Kolling"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
+            <div class="org-info">
+              <b>Andreas Kolling</b>
+              <div class="affil">Amazon Mobile Robotics</div>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -366,8 +406,8 @@
             <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
             <div class="org-info">
               <b>Tinoosh Mohsenin</b>
-              <div class="affil">Associate Professor</div>
-              <div class="role-tag">Johns Hopkins University</div>
+              <div class="affil">Johns Hopkins University</div>
+              <div class="role-tag">Associate Professor</div>
             </div>
           </div>
 
@@ -377,8 +417,8 @@
             <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
             <div class="org-info">
               <b>Eiman Kanjo</b>
-              <div class="affil">Professor</div>
-              <div class="role-tag">Imperial College London</div>
+              <div class="affil">Imperial College London</div>
+              <div class="role-tag">Professor</div>
             </div>
           </div>
 
@@ -388,8 +428,8 @@
             <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
             <div class="org-info">
               <b>Evgeni Gousev</b>
-              <div class="affil">Vice President</div>
-              <div class="role-tag">Qualcomm</div>
+              <div class="affil">Qualcomm</div>
+              <div class="role-tag">Vice President</div>
             </div>
           </div>
 
@@ -399,8 +439,8 @@
             <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
             <div class="org-info">
               <b>Pete Bernard</b>
-              <div class="affil">Chief Executive Officer</div>
-              <div class="role-tag">Edge AI Foundation</div>
+              <div class="affil">Edge AI Foundation</div>
+              <div class="role-tag">CEO</div>
             </div>
           </div>
 
@@ -410,8 +450,8 @@
             <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
             <div class="org-info">
               <b>Hasib-Al Rashid</b>
-              <div class="affil">Applied Scientist</div>
-              <div class="role-tag">Amazon Web Services (AWS)</div>
+              <div class="affil">Amazon Web Services (AWS)</div>
+              <div class="role-tag">Applied Scientist</div>
             </div>
           </div>
 
@@ -421,8 +461,8 @@
             <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
             <div class="org-info">
               <b>Xiaomin Lin</b>
-              <div class="affil">Assistant Professor</div>
-              <div class="role-tag">University of South Florida</div>
+              <div class="affil">University of South Florida</div>
+              <div class="role-tag">Assistant Professor</div>
             </div>
           </div>
 
@@ -432,8 +472,8 @@
             <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
             <div class="org-info">
               <b>Chuchu Chen</b>
-              <div class="affil">Assistant Professor</div>
-              <div class="role-tag">George Washington University</div>
+              <div class="affil">George Washington University</div>
+              <div class="role-tag">Assistant Professor</div>
             </div>
           </div>
 
@@ -443,8 +483,8 @@
             <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
             <div class="org-info">
               <b>Naitri Rajyaguru</b>
-              <div class="affil">PhD Student</div>
-              <div class="role-tag">University of Maryland</div>
+              <div class="affil">University of Maryland</div>
+              <div class="role-tag">PhD Student</div>
             </div>
           </div>
 
@@ -454,7 +494,7 @@
       <section id="contact" class="card dark">
         <h2>Contact</h2>
         <p class="muted">
-          Email: <a href="mailto:irosedgeai@gmail.com">irosedgeai@gmail.com</a>
+          Email: <a href="/cdn-cgi/l/email-protection#066f74697563626163676f46616b676f6a2865696b"><span class="__cf_email__" data-cfemail="cda4bfa2bea8a9aaa8aca48daaa0aca4a1e3aea2a0">[email&#160;protected]</span></a>
         </p>
       </section>
 
@@ -464,11 +504,3 @@
   <footer>
     <div class="wrap">
       © <span id="y"></span> IROS Workshop Organizers &nbsp;•&nbsp; Built as a lightweight static site.
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
