@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Real Time AI on the Edge: from Sensing to Automous Robots (IROS 2026 Workshop)</title>
+  <title>Real Time AI on the Edge: from Sensing to Autonomous Robots (IROS 2026 Workshop)</title>
   <meta name="description" content="IROS workshop on real-time edge AI for robot autonomy, focusing on end-to-end systems: sensing, inference, decision-making, and control under latency and power constraints." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -15,47 +17,50 @@
       --accent:#7d0025;
       --accent2:#b5003a;
       --border:rgba(109,0,32,.15);
-      --max: 980px;
+      --max: 1080px;
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'DM Sans', system-ui, sans-serif;
       background: var(--bg);
       color:var(--text);
-      line-height:1.55;
+      line-height:1.6;
     }
     a{color:var(--accent2); text-decoration:none}
     a:hover{text-decoration:underline}
 
     /* ── HEADER ── */
     header{
-      background: linear-gradient(135deg, #6b0020 0%, #9b0030 50%, #b5003a 100%);
-      padding: 52px 18px 24px;
+      background: linear-gradient(135deg, #5a0018 0%, #8b0028 50%, #b5003a 100%);
+      padding: 56px 24px 28px;
       border-bottom: 4px solid #d4003f;
     }
     .wrap{max-width:var(--max); margin:0 auto}
     .title{
-      font-size: clamp(24px, 3.2vw, 38px);
-      margin:0 0 10px;
-      letter-spacing:-0.02em;
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(26px, 3.4vw, 42px);
+      margin:0 0 12px;
+      letter-spacing:-0.01em;
       color: #ffffff;
+      line-height: 1.2;
     }
     .subtitle{
       margin:0;
-      color: rgba(255,255,255,.80);
+      color: rgba(255,255,255,.82);
       font-size: 15px;
     }
     nav{
-      margin-top:20px; display:flex; flex-wrap:wrap; gap:8px;
+      margin-top:22px; display:flex; flex-wrap:wrap; gap:8px;
     }
     nav a{
-      padding:7px 14px;
+      padding:7px 15px;
       border:1px solid rgba(255,255,255,.35);
       border-radius:999px;
       color:#ffffff;
       background: rgba(255,255,255,.10);
-      font-size: 14px;
+      font-size: 13.5px;
+      font-weight: 500;
       transition: background 0.2s;
     }
     nav a:hover{
@@ -64,9 +69,9 @@
     }
 
     /* ── MAIN GRID ── */
-    main{padding: 28px 18px 64px; background: #ffffff;}
+    main{padding: 32px 24px 72px; background: #ffffff;}
     .grid{
-      display:grid; gap:16px;
+      display:grid; gap:18px;
       grid-template-columns: 1.2fr .8fr;
     }
     @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
@@ -75,9 +80,9 @@
     .card{
       background: #fff8f8;
       border: 1px solid rgba(109,0,32,.12);
-      border-radius: 14px;
-      padding: 20px;
-      box-shadow: 0 2px 12px rgba(109,0,32,.06);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 2px 14px rgba(109,0,32,.06);
     }
     .card.dark{
       background: linear-gradient(135deg, #6b0020, #8b0028);
@@ -89,15 +94,19 @@
     .card.dark li b{ color:#ffffff; }
     .card.dark a{ color:#ffb3c6; }
 
+    /* full-width card */
+    .card.full{ grid-column: 1 / -1; }
+
     h2{
-      margin:0 0 12px;
-      font-size: 17px;
+      margin:0 0 14px;
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
       color: var(--accent);
       border-bottom: 1px solid rgba(109,0,32,.15);
-      padding-bottom: 8px;
+      padding-bottom: 10px;
     }
     ul{margin:10px 0 0 18px; padding:0}
-    li{ margin-bottom: 6px; }
+    li{ margin-bottom: 7px; }
     .pill{
       display:inline-block; padding:3px 11px; border-radius:999px;
       background: rgba(255,255,255,.20);
@@ -108,30 +117,30 @@
 
     /* ── KPI BOXES ── */
     .kpi{
-      display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin-top:14px;
+      display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin-top:16px;
     }
     @media (max-width: 650px){ .kpi{grid-template-columns:1fr} }
     .kpi div{
-      padding:12px; border-radius:10px;
+      padding:14px; border-radius:12px;
       border:1px solid rgba(109,0,32,.15);
       background: #ffffff;
     }
-    .kpi b{display:block; font-size:13px; color: var(--accent); margin-bottom:2px;}
+    .kpi b{display:block; font-size:13px; color: var(--accent); margin-bottom:3px; font-weight:600;}
     .kpi span{font-size:12px; color:var(--muted)}
 
     /* ── SPEAKERS GRID ── */
     .speaker-grid{
       display:grid;
-      gap:12px;
+      gap:14px;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      margin-top: 10px;
+      margin-top: 12px;
     }
     @media (max-width: 650px){ .speaker-grid{grid-template-columns:1fr} }
     .speaker{
       background:#ffffff;
       border:1px solid rgba(109,0,32,.15);
       border-radius:12px;
-      padding:14px;
+      padding:16px;
     }
     .speaker b{display:block; color: var(--accent); margin-bottom:4px;}
     .speaker .role{font-size: 13px; color: var(--muted);}
@@ -140,71 +149,93 @@
     /* ── ORGANIZING COMMITTEE GRID ── */
     .org-grid{
       display:grid;
-      gap:12px;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      margin-top: 10px;
+      gap:16px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 14px;
     }
-    @media (max-width: 650px){ .org-grid{grid-template-columns:1fr} }
+    @media (max-width: 900px){ .org-grid{grid-template-columns: repeat(3, 1fr)} }
+    @media (max-width: 600px){ .org-grid{grid-template-columns: repeat(2, 1fr)} }
 
     .org-card{
       display:flex;
-      gap:12px;
-      align-items:flex-start;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
       background:#ffffff;
-      border:1px solid rgba(109,0,32,.15);
-      border-radius:12px;
-      padding:14px;
+      border:1px solid rgba(109,0,32,.12);
+      border-radius:16px;
+      padding: 20px 14px 16px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .org-card:hover{
+      box-shadow: 0 6px 24px rgba(109,0,32,.13);
+      transform: translateY(-2px);
     }
 
-    /* Photo placeholder block for each organizer (replace with <img> later) */
+    /* Headshot image */
     .org-photo{
-      width:72px;
-      height:72px;
-      flex: 0 0 72px;
-      border-radius:12px;
-      border:1px dashed rgba(109,0,32,.30);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(109,0,32,.18);
       background: rgba(109,0,32,.06);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:12px;
-      color: var(--muted);
-      text-align:center;
-      padding:8px;
+      margin-bottom: 12px;
+      display: block;
     }
 
+    /* Placeholder div when no photo yet */
+    .org-photo-placeholder{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px dashed rgba(109,0,32,.30);
+      background: rgba(109,0,32,.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 12px;
+      flex-shrink: 0;
+    }
+
+    .org-info{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
     .org-info b{
       display:block;
       color: var(--accent);
       margin-bottom:4px;
       font-size: 14px;
+      font-weight: 600;
     }
     .org-info .affil{
-      font-size: 13px;
+      font-size: 12.5px;
       color: var(--muted);
+      line-height: 1.4;
     }
-    .org-info .role{
-      margin-top:6px;
-      font-size: 13px;
-      color: var(--muted);
+    .org-info .role-tag{
+      margin-top:7px;
+      display:inline-block;
+      font-size: 11.5px;
+      color: var(--accent);
+      background: rgba(109,0,32,.07);
+      border: 1px solid rgba(109,0,32,.15);
+      border-radius: 999px;
+      padding: 2px 10px;
     }
 
     /* ── FOOTER ── */
     footer{
-      padding: 20px 18px;
-      background: linear-gradient(135deg, #6b0020, #9b0030);
+      padding: 22px 24px;
+      background: linear-gradient(135deg, #5a0018, #8b0028);
       color: rgba(255,255,255,.75);
       text-align: center;
       font-size: 14px;
-    }
-    /* ── ADD THIS ── */
-    img.org-photo {
-      width: 72px;
-      height: 72px;
-      flex: 0 0 72px;
-      border-radius: 12px;
-      object-fit: cover;
-      border: 1px solid rgba(109,0,32,.15);
     }
   </style>
 </head>
@@ -212,7 +243,7 @@
 <body>
   <header>
     <div class="wrap">
-      <h1 class="title">Real Time AI on the Edge: from Sensing to Automous Robots</h1>
+      <h1 class="title">Real Time AI on the Edge:<br/>from Sensing to Autonomous Robots</h1>
       <p class="subtitle">
         IROS 2026 Workshop &nbsp;•&nbsp;
         <span class="pill">Real-time</span>
@@ -259,8 +290,8 @@
           <li>Camera-ready: <b>TBA</b></li>
           <li>Workshop date: <b>TBA (IROS)</b></li>
         </ul>
-        <p class="muted" style="margin-top:12px; font-size:13px;">
-          Add dates as soon as IROS confirms the workshop schedule.
+        <p class="muted" style="margin-top:14px; font-size:13px;">
+          Dates will be confirmed once the IROS workshop schedule is announced.
         </p>
       </aside>
 
@@ -299,30 +330,23 @@
 
       <section id="speakers" class="card">
         <h2>Speakers</h2>
-        <p class="muted">
-          Invited speakers and panelists will be announced soon.
-        </p>
-
-        <!-- Replace the placeholder entries below as speakers confirm -->
+        <p class="muted">Invited speakers and panelists will be announced soon.</p>
         <div class="speaker-grid">
           <div class="speaker">
             <b>TBA — Invited Speaker</b>
             <div class="role">Affiliation: <span class="muted">TBA</span></div>
             <div class="meta">Topic: <span class="muted">TBA</span></div>
           </div>
-
           <div class="speaker">
             <b>TBA — Invited Speaker</b>
             <div class="role">Affiliation: <span class="muted">TBA</span></div>
             <div class="meta">Topic: <span class="muted">TBA</span></div>
           </div>
-
           <div class="speaker">
             <b>TBA — Panelist / Speaker</b>
             <div class="role">Affiliation: <span class="muted">TBA</span></div>
             <div class="meta">Topic: <span class="muted">TBA</span></div>
           </div>
-
           <div class="speaker">
             <b>TBA — Panelist / Speaker</b>
             <div class="role">Affiliation: <span class="muted">TBA</span></div>
@@ -331,84 +355,106 @@
         </div>
       </section>
 
-      <section id="organizers" class="card">
+      <!-- ORGANIZERS — full width -->
+      <section id="organizers" class="card full">
         <h2>Organizing Committee</h2>
-
-        <!--
-          Photo notes:
-          - Each member has a dedicated photo block (.org-photo).
-          - Later you can replace the <div class="org-photo"> with an <img> tag, e.g.:
-            <img class="org-photo-img" src="images/xiaomin-lin.jpg" alt="Xiaomin Lin" />
-        -->
-
         <div class="org-grid">
-          <div class="org-card">
-            <img class="org-photo" src="xiaomi.jpg" alt="Xiaomin Lin" />
-            <div class="org-info">
-              <b>Xiaomin Lin</b>
-              <div class="affil">University of South Florida</div>
-              <div class="role">Assistant Professor</div>
-            </div>
-          </div>
 
           <div class="org-card">
-            <div class="org-photo">Photo<br/>TBA</div>
+            <img class="org-photo" src="tinoosh.jpg" alt="Tinoosh Mohsenin"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
             <div class="org-info">
               <b>Tinoosh Mohsenin</b>
               <div class="affil">Johns Hopkins University</div>
-              <div class="role">Associate Professor</div>
+              <div class="role-tag">Associate Professor</div>
             </div>
           </div>
+
           <div class="org-card">
-            <div class="org-photo">Photo<br/>TBA</div>
+            <img class="org-photo" src="eiman.jpg" alt="Eiman Kanjo"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
+            <div class="org-info">
+              <b>Eiman Kanjo</b>
+              <div class="affil">Imperial College London</div>
+              <div class="role-tag">Professor</div>
+            </div>
+          </div>
+
+          <div class="org-card">
+            <img class="org-photo" src="evgeini.jpg" alt="Evgeni Gousev"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
             <div class="org-info">
               <b>Evgeni Gousev</b>
               <div class="affil">Qualcomm</div>
-              <div class="role">Vice President</div>
+              <div class="role-tag">Vice President</div>
             </div>
           </div>
+
           <div class="org-card">
-            <div class="org-photo">Photo<br/>TBA</div>
+            <img class="org-photo" src="pete.jpg" alt="Pete Bernard"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
             <div class="org-info">
               <b>Pete Bernard</b>
               <div class="affil">Edge AI Foundation</div>
-              <div class="role">&nbsp;</div>
+              <div class="role-tag">CEO</div>
             </div>
           </div>
 
           <div class="org-card">
-            <div class="org-photo">Photo<br/>TBA</div>
+            <img class="org-photo" src="hasib.jpg" alt="Hasib-Al Rashid"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
             <div class="org-info">
               <b>Hasib-Al Rashid</b>
               <div class="affil">Amazon Web Services (AWS)</div>
-              <div class="role">Applied Scientist</div>
+              <div class="role-tag">Applied Scientist</div>
             </div>
+          </div>
 
           <div class="org-card">
-            <div class="org-photo">Photo<br/>TBA</div>
+            <img class="org-photo" src="xiaomin.jpg" alt="Xiaomin Lin"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
+            <div class="org-info">
+              <b>Xiaomin Lin</b>
+              <div class="affil">University of South Florida</div>
+              <div class="role-tag">Assistant Professor</div>
+            </div>
+          </div>
+
+          <div class="org-card">
+            <img class="org-photo" src="chuchu.jpg" alt="Chuchu Chen"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
             <div class="org-info">
               <b>Chuchu Chen</b>
               <div class="affil">George Washington University</div>
-              <div class="role">Assistant Professor</div>
+              <div class="role-tag">Assistant Professor</div>
             </div>
-          </div>
           </div>
 
           <div class="org-card">
-            <div class="org-photo">Photo<br/>TBA</div>
+            <img class="org-photo" src="naitri.jpg" alt="Naitri Rajyaguru"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="org-photo-placeholder" style="display:none">Photo<br/>TBA</div>
             <div class="org-info">
               <b>Naitri Rajyaguru</b>
               <div class="affil">University of Maryland</div>
-              <div class="role">PhD student</div>
+              <div class="role-tag">PhD Student</div>
             </div>
           </div>
+
         </div>
       </section>
 
       <section id="contact" class="card dark">
         <h2>Contact</h2>
         <p class="muted">
-          Email: <a href="mailto:irosedgeai@gmail.com">irosedgeai@gmail.com</a><br/><br/>
+          Email: <a href="mailto:irosedgeai@gmail.com">irosedgeai@gmail.com</a>
         </p>
       </section>
 
